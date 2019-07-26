@@ -1,5 +1,5 @@
 {% set name = "simplekv" %}
-{% set version = "0.12.0" %}
+{% set version = "0.13.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 61e6a8c8d53154033c8f97131418d0e31159d5d959a94b8f0fe5587da2d472b1
+  sha256: ae52e8f48618ecf9f81631c152ea8fbed8b88fb7c17870db984a295481483c06
 
 build:
   noarch: python
