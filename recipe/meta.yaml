@@ -1,5 +1,5 @@
 {% set name = "simplekv" %}
-{% set version = "0.14.0" %}
+{% set version = "0.14.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d951549bb3d9dbe944ae3308fde66702c4f0478c94c785139a37da4129cd8882
+  sha256: 8953a36cb3741ea821c9de1962b5313bf6fe1b927f6ced2a55266eb8ce2cd0f6
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . -vvv
 
 requirements:
   host:
@@ -24,13 +24,17 @@ requirements:
 test:
   imports:
     - simplekv
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: http://simplekv.readthedocs.io/
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'A simple key-value store for binary data.'
+  summary: A simple key-value store for binary data.
   dev_url: https://github.com/mbr/simplekv
 
 extra:
